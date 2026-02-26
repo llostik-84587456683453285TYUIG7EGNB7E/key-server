@@ -72,11 +72,11 @@
     "tg_id": null
   },
   "kewit2D241": {
-    "plan": "5d",
-    "plan_name_ru": "5 дней",
-    "plan_name_en": "5 days",
-    "expires": "2026-03-03T17:48:45.846606",
+    "plan": "inf",
+    "plan_name_ru": "Навсегда",
+    "plan_name_en": "Forever",
+    "expires": null,
     "bought_at": "2026-02-26T17:48:45.846606",
-    "tg_id": 5159404892
+    "tg_id": null
   }
 }
