@@ -16,7 +16,7 @@ from datetime import datetime, timedelta
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 YOOMONEY_TOKEN = os.environ.get("YOOMONEY_TOKEN")
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
-GITHUB_REPO = "llostiktt/key-server"
+GITHUB_REPO = "llostik-84587456683453285TYUIG7EGNB7E/key-server"
 WALLET = "4100119480343964"
 SUPPORT_1 = "@llostikKJ00"
 SUPPORT_2 = "@cha7ok"
