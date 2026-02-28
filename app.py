@@ -32,14 +32,16 @@ PLANS = {
     "inf": {"days": -1,  "usd": 200, "name_ru": "Навсегда", "name_en": "Forever"},
 }
 
-# ─── Тексты ───────────────────────────────────────────────────────────────────
-
 T = {
     "ru": {
         "welcome": "👋 *Добро пожаловать в GGShop|Dark Side!*\n\n🎮 Продаём скрипты для Project Delta\n\nВыбери раздел ниже 👇",
         "buy_btn": "🛒 Купить подписку",
         "help_btn": "❓ Помощь",
         "updates_btn": "🔄 Обновления",
+        "choose_product": "🛍️ *Что хочешь купить?*\n\nВыбери продукт:",
+        "base_btn": "🔵 Base — автофарм скрипт",
+        "premium_btn": "🟣 Premium — скоро",
+        "premium_wip": "🟣 *Premium*\n\n📝 Описание:\n\n_(здесь будет описание)_\n\nСледи за обновлениями!\n\n👤 {s1}\n👤 {s2}",
         "choose_plan": "💳 *Выбери тариф:*\n\n5 дней — попробовать\n30 дней — стандарт\n365 дней — выгодно + все обновления\nНавсегда — максимум + все обновления",
         "help_text": "❓ *Помощь*\n\nЕсли возникли проблемы — пиши в поддержку:\n\n👤 {s1}\n👤 {s2}\n\nПроверить подписку: /mysub",
         "updates_locked": "🔒 *Раздел обновлений*\n\nДоступен только для тарифов *365 дней* и *Навсегда*.\n\nКупи подходящий тариф через 🛒 Купить подписку",
@@ -55,7 +57,7 @@ T = {
         "paid_ok": "✅ *Оплата найдена!*\n\nНапиши свой ник в Roblox:",
         "paid_fail": "❌ Оплата не найдена.\n\nПодожди пару минут и попробуй /check снова.\n\nПроблемы? {s1} или {s2}",
         "no_plan": "❌ Сначала выбери тариф через 🛒 Купить подписку",
-        "activated": "🎉 *Подписка активирована! пожалуйста подождите пока сервер вас обновит это от 1-минуты до 5-6 минут🥰*\n\n👤 Ник: `{u}`\n📦 Тариф: {p}\n⏳ Действует: {e}\n\nЗапускай скрипт в Xeno:\n`loadstring(game:HttpGet('https://raw.githubusercontent.com/llostik-84587456683453285TYUIG7EGNB7E/by.llostikxCha7ok/refs/heads/main/Final.best'))()`",
+        "activated": "🎉 *Подписка активирована! Пожалуйста подождите пока сервер вас обновит — от 1 до 5-6 минут 🥰*\n\n👤 Ник: `{u}`\n📦 Тариф: {p}\n⏳ Действует: {e}\n\nЗапускай скрипт в Xeno:\n`loadstring(game:HttpGet('https://raw.githubusercontent.com/llostik-84587456683453285TYUIG7EGNB7E/by.llostikxCha7ok/refs/heads/main/Final.best'))()`",
         "updates_hint": "\n\n🔄 Обновления доступны в разделе *Обновления*",
         "error_activate": "⚠️ Ошибка при активации.\n{s1} или {s2}",
         "error_sub": "⚠️ Ошибка при проверке подписки.",
@@ -67,6 +69,10 @@ T = {
         "buy_btn": "🛒 Buy subscription",
         "help_btn": "❓ Help",
         "updates_btn": "🔄 Updates",
+        "choose_product": "🛍️ *What do you want to buy?*\n\nChoose a product:",
+        "base_btn": "🔵 Base — autofarm script",
+        "premium_btn": "🟣 Premium — coming soon",
+        "premium_wip": "🟣 *Premium*\n\n📝 Description:\n\n_(description coming soon)_\n\nStay tuned!\n\n👤 {s1}\n👤 {s2}",
         "choose_plan": "💳 *Choose a plan:*\n\n5 days — try it out\n30 days — standard\n365 days — great deal + all updates\nForever — maximum + all updates",
         "help_text": "❓ *Help*\n\nIf you have any issues — contact support:\n\n👤 {s1}\n👤 {s2}\n\nCheck your subscription: /mysub",
         "updates_locked": "🔒 *Updates section*\n\nOnly available for *365 days* and *Forever* plans.\n\nBuy the right plan via 🛒 Buy subscription",
@@ -82,7 +88,7 @@ T = {
         "paid_ok": "✅ *Payment found!*\n\nEnter your Roblox username:",
         "paid_fail": "❌ Payment not found.\n\nWait a few minutes and try /check again.\n\nIssues? {s1} or {s2}",
         "no_plan": "❌ First choose a plan via 🛒 Buy subscription",
-        "activated": "🎉 *Subscription activated! Please wait for the server to update you, which takes anywhere from 1 minute to 5-6 minutes.🥰*\n\n👤 Username: `{u}`\n📦 Plan: {p}\n⏳ Valid: {e}\n\nRun the script in Xeno:\n`loadstring(game:HttpGet(',https://raw.githubusercontent.com/llostik-84587456683453285TYUIG7EGNB7E/by.llostikxCha7ok/refs/heads/main/Final.best'))()`",
+        "activated": "🎉 *Subscription activated! Please wait for the server to update you — 1 to 5-6 minutes 🥰*\n\n👤 Username: `{u}`\n📦 Plan: {p}\n⏳ Valid: {e}\n\nRun the script in Xeno:\n`loadstring(game:HttpGet('https://raw.githubusercontent.com/llostik-84587456683453285TYUIG7EGNB7E/by.llostikxCha7ok/refs/heads/main/Final.best'))()`",
         "updates_hint": "\n\n🔄 Updates are available in the *Updates* section",
         "error_activate": "⚠️ Activation error.\n{s1} or {s2}",
         "error_sub": "⚠️ Error checking subscription.",
@@ -97,8 +103,6 @@ def t(lang, key, **kwargs):
 
 bot = telebot.TeleBot(BOT_TOKEN, threaded=False)
 
-# ─── Курс валюты ──────────────────────────────────────────────────────────────
-
 def get_usd_rub():
     try:
         r = requests.get("https://api.exchangerate-api.com/v4/latest/USD", timeout=5)
@@ -108,8 +112,6 @@ def get_usd_rub():
 
 def usd_to_rub(usd):
     return round(usd * get_usd_rub())
-
-# ─── GitHub helpers ───────────────────────────────────────────────────────────
 
 def github_read(filename):
     headers = {
@@ -137,8 +139,6 @@ def github_write(filename, data, sha=None, message="update"):
     r = requests.put(url, headers=headers, json=payload, timeout=10)
     return r.status_code in (200, 201)
 
-# ─── Pending ──────────────────────────────────────────────────────────────────
-
 PENDING_FILE = "pending.json"
 
 def pending_get(chat_id):
@@ -165,8 +165,6 @@ def pending_del(chat_id):
     except Exception as e:
         print(f"pending_del error: {e}")
 
-# ─── Язык пользователя ────────────────────────────────────────────────────────
-
 LANG_FILE = "languages.json"
 
 def lang_get(chat_id):
@@ -183,8 +181,6 @@ def lang_set(chat_id, lang):
         github_write(LANG_FILE, data, sha, "language update")
     except Exception as e:
         print(f"lang_set error: {e}")
-
-# ─── Подписки ─────────────────────────────────────────────────────────────────
 
 SUBS_FILE = "subscriptions.json"
 
@@ -228,8 +224,6 @@ def add_subscription(username, plan_key, tg_id):
         update_users_txt(subs)
     return ok
 
-# ─── Очистка истёкших подписок каждый час ─────────────────────────────────────
-
 def cleanup_expired():
     while True:
         try:
@@ -248,8 +242,6 @@ def cleanup_expired():
             print(f"cleanup error: {e}")
         time.sleep(3600)
 
-# ─── Кнопки ───────────────────────────────────────────────────────────────────
-
 def lang_keyboard():
     kb = types.InlineKeyboardMarkup()
     kb.row(
@@ -264,6 +256,12 @@ def main_menu(lang):
     kb.row(t(lang, "help_btn"), t(lang, "updates_btn"))
     return kb
 
+def product_keyboard(lang):
+    kb = types.InlineKeyboardMarkup()
+    kb.add(types.InlineKeyboardButton(t(lang, "base_btn"), callback_data="product_base"))
+    kb.add(types.InlineKeyboardButton(t(lang, "premium_btn"), callback_data="product_premium"))
+    return kb
+
 def plans_keyboard(lang):
     kb = types.InlineKeyboardMarkup()
     for key, plan in PLANS.items():
@@ -274,8 +272,6 @@ def plans_keyboard(lang):
             callback_data=f"buy_{key}"
         ))
     return kb
-
-# ─── Хэндлеры ─────────────────────────────────────────────────────────────────
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -297,6 +293,23 @@ def handle_lang(call):
 def buy_menu(message):
     lang = lang_get(message.chat.id)
     bot.send_message(message.chat.id,
+        t(lang, "choose_product"),
+        parse_mode="Markdown",
+        reply_markup=product_keyboard(lang))
+
+@bot.callback_query_handler(func=lambda c: c.data.startswith("product_"))
+def handle_product(call):
+    lang = lang_get(call.message.chat.id)
+    product = call.data.replace("product_", "")
+    bot.answer_callback_query(call.id)
+
+    if product == "premium":
+        bot.send_message(call.message.chat.id,
+            t(lang, "premium_wip"),
+            parse_mode="Markdown")
+        return
+
+    bot.send_message(call.message.chat.id,
         t(lang, "choose_plan"),
         parse_mode="Markdown",
         reply_markup=plans_keyboard(lang))
@@ -401,7 +414,6 @@ def check_payment(code):
             data={"records": 10},
             timeout=10
         )
-        print(f"YooMoney status: {r.status_code}")
         for op in r.json().get("operations", []):
             if op.get("status") == "success" and op.get("label") == code:
                 return True
@@ -455,8 +467,6 @@ def get_username(message):
     else:
         bot.send_message(message.chat.id, t(lang, "error_activate"), parse_mode="Markdown")
 
-# ─── HTTP сервер ──────────────────────────────────────────────────────────────
-
 class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
@@ -506,8 +516,6 @@ class Handler(BaseHTTPRequestHandler):
 
     def log_message(self, format, *args):
         pass
-
-# ─── Запуск ───────────────────────────────────────────────────────────────────
 
 RAILWAY_URL = os.environ.get("RAILWAY_PUBLIC_DOMAIN")
 
