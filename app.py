@@ -26,11 +26,24 @@ UPDATE_LINKS = [
 ]
 
 PLANS = {
-    "5d":  {"days": 5,   "usd": 3,   "name_ru": "5 дней",   "name_en": "5 days"},
-    "30d": {"days": 30,  "usd": 13,  "name_ru": "30 дней",  "name_en": "30 days"},
-    "365d":{"days": 365, "usd": 70,  "name_ru": "365 дней", "name_en": "365 days"},
-    "inf": {"days": -1,  "usd": 200, "name_ru": "Навсегда", "name_en": "Forever"},
+    "base": {
+        "5d":   {"days": 5,   "usd": 2,   "name_ru": "5 дней",   "name_en": "5 days"},
+        "30d":  {"days": 30,  "usd": 10,  "name_ru": "30 дней",  "name_en": "30 days"},
+        "365d": {"days": 365, "usd": 40,  "name_ru": "365 дней", "name_en": "365 days"},
+        "inf":  {"days": -1,  "usd": 150, "name_ru": "Навсегда", "name_en": "Forever"},
+    },
+    "premium": {
+        "5d":   {"days": 5,   "usd": 4,   "name_ru": "5 дней",   "name_en": "5 days"},
+        "30d":  {"days": 30,  "usd": 15,  "name_ru": "30 дней",  "name_en": "30 days"},
+        "365d": {"days": 365, "usd": 50,  "name_ru": "365 дней", "name_en": "365 days"},
+        "inf":  {"days": -1,  "usd": 200, "name_ru": "Навсегда", "name_en": "Forever"},
+    }
 }
+
+SUBS_FILE = "subscriptions.json"
+PREMIUM_SUBS_FILE = "premium_subscriptions.json"
+PENDING_FILE = "pending.json"
+LANG_FILE = "languages.json"
 
 T = {
     "ru": {
@@ -40,9 +53,19 @@ T = {
         "updates_btn": "🔄 Обновления",
         "choose_product": "🛍️ *Что хочешь купить?*\n\nВыбери продукт:",
         "base_btn": "🔵 Base — автофарм скрипт",
-        "premium_btn": "🟣 Ultimate — GGshop ",
-        "premium_wip": "🟣 *Premium*\n\n📝 Описание:\n\n_(здесь будет описание)_\n\nСледи за обновлениями!\n\n👤 {s1}\n👤 {s2}",
-        "choose_plan": "💳 *Выбери тариф:*\n\n5 дней — попробовать\n30 дней — стандарт\n365 дней — выгодно + все обновления\nНавсегда — максимум + все обновления",
+        "premium_btn": "🟣 Ultimate — GGshop",
+        "premium_wip": (
+            "🟣 *Ultimate — GGshop*\n\n"
+            "📝 Описание:\n\n"
+            "_(здесь будет описание)_\n\n"
+            "💳 *Тарифы:*\n\n"
+            "• 5 дней — $4 (~{p5}₽)\n"
+            "• 30 дней — $15 (~{p30}₽)\n"
+            "• 365 дней — $50 (~{p365}₽)\n"
+            "• Навсегда — $200 (~{pinf}₽)\n\n"
+            "👤 {s1}\n👤 {s2}"
+        ),
+        "choose_plan": "💳 *Выбери тариф:*",
         "help_text": "❓ *Помощь*\n\nЕсли возникли проблемы — пиши в поддержку:\n\n👤 {s1}\n👤 {s2}\n\nПроверить подписку: /mysub",
         "updates_locked": "🔒 *Раздел обновлений*\n\nДоступен только для тарифов *365 дней* и *Навсегда*.\n\nКупи подходящий тариф через 🛒 Купить подписку",
         "updates_empty": "📭 Обновлений пока нет.",
@@ -57,7 +80,8 @@ T = {
         "paid_ok": "✅ *Оплата найдена!*\n\nНапиши свой ник в Roblox:",
         "paid_fail": "❌ Оплата не найдена.\n\nПодожди пару минут и попробуй /check снова.\n\nПроблемы? {s1} или {s2}",
         "no_plan": "❌ Сначала выбери тариф через 🛒 Купить подписку",
-        "activated": "🎉 *Подписка активирована! Пожалуйста подождите пока сервер вас обновит — от 1 до 5-6 минут 🥰*\n\n👤 Ник: `{u}`\n📦 Тариф: {p}\n⏳ Действует: {e}\n\nЗапускай скрипт в Xeno:\n`loadstring(game:HttpGet('https://raw.githubusercontent.com/llostik-84587456683453285TYUIG7EGNB7E/by.llostikxCha7ok/refs/heads/main/Final.best'))()`",
+        "activated_base": "🎉 *Подписка Base активирована! Пожалуйста подождите пока сервер вас обновит — от 1 до 5-6 минут 🥰*\n\n👤 Ник: `{u}`\n📦 Тариф: {p}\n⏳ Действует: {e}\n\nЗапускай скрипт в Xeno:\n`loadstring(game:HttpGet('https://raw.githubusercontent.com/llostik-84587456683453285TYUIG7EGNB7E/by.llostikxCha7ok/refs/heads/main/Final.best'))()`",
+        "activated_premium": "🎉 *Подписка Ultimate активирована! Пожалуйста подождите пока сервер вас обновит — от 1 до 5-6 минут 🥰*\n\n👤 Ник: `{u}`\n📦 Тариф: {p}\n⏳ Действует: {e}\n\nЗапускай скрипт в Xeno:\n`loadstring(game:HttpGet('https://raw.githubusercontent.com/llostik-84587456683453285TYUIG7EGNB7E/by.llostikxCha7ok/refs/heads/main/PREMIUM_SCRIPT'))()`",
         "updates_hint": "\n\n🔄 Обновления доступны в разделе *Обновления*",
         "error_activate": "⚠️ Ошибка при активации.\n{s1} или {s2}",
         "error_sub": "⚠️ Ошибка при проверке подписки.",
@@ -72,8 +96,18 @@ T = {
         "choose_product": "🛍️ *What do you want to buy?*\n\nChoose a product:",
         "base_btn": "🔵 Base — autofarm script",
         "premium_btn": "🟣 Ultimate — GGshop",
-        "premium_wip": "🟣 *Premium*\n\n📝 Description:\n\n_(description coming soon)_\n\nStay tuned!\n\n👤 {s1}\n👤 {s2}",
-        "choose_plan": "💳 *Choose a plan:*\n\n5 days — try it out\n30 days — standard\n365 days — great deal + all updates\nForever — maximum + all updates",
+        "premium_wip": (
+            "🟣 *Ultimate — GGshop*\n\n"
+            "📝 Description:\n\n"
+            "_(description coming soon)_\n\n"
+            "💳 *Plans:*\n\n"
+            "• 5 days — $4 (~{p5}₽)\n"
+            "• 30 days — $15 (~{p30}₽)\n"
+            "• 365 days — $50 (~{p365}₽)\n"
+            "• Forever — $200 (~{pinf}₽)\n\n"
+            "👤 {s1}\n👤 {s2}"
+        ),
+        "choose_plan": "💳 *Choose a plan:*",
         "help_text": "❓ *Help*\n\nIf you have any issues — contact support:\n\n👤 {s1}\n👤 {s2}\n\nCheck your subscription: /mysub",
         "updates_locked": "🔒 *Updates section*\n\nOnly available for *365 days* and *Forever* plans.\n\nBuy the right plan via 🛒 Buy subscription",
         "updates_empty": "📭 No updates yet.",
@@ -88,7 +122,8 @@ T = {
         "paid_ok": "✅ *Payment found!*\n\nEnter your Roblox username:",
         "paid_fail": "❌ Payment not found.\n\nWait a few minutes and try /check again.\n\nIssues? {s1} or {s2}",
         "no_plan": "❌ First choose a plan via 🛒 Buy subscription",
-        "activated": "🎉 *Subscription activated! Please wait for the server to update you — 1 to 5-6 minutes 🥰*\n\n👤 Username: `{u}`\n📦 Plan: {p}\n⏳ Valid: {e}\n\nRun the script in Xeno:\n`loadstring(game:HttpGet('https://raw.githubusercontent.com/llostik-84587456683453285TYUIG7EGNB7E/by.llostikxCha7ok/refs/heads/main/Final.best'))()`",
+        "activated_base": "🎉 *Base subscription activated! Please wait for the server to update you — 1 to 5-6 minutes 🥰*\n\n👤 Username: `{u}`\n📦 Plan: {p}\n⏳ Valid: {e}\n\nRun the script in Xeno:\n`loadstring(game:HttpGet('https://raw.githubusercontent.com/llostik-84587456683453285TYUIG7EGNB7E/by.llostikxCha7ok/refs/heads/main/Final.best'))()`",
+        "activated_premium": "🎉 *Ultimate subscription activated! Please wait for the server to update you — 1 to 5-6 minutes 🥰*\n\n👤 Username: `{u}`\n📦 Plan: {p}\n⏳ Valid: {e}\n\nRun the script in Xeno:\n`loadstring(game:HttpGet('https://raw.githubusercontent.com/llostik-84587456683453285TYUIG7EGNB7E/by.llostikxCha7ok/refs/heads/main/PREMIUM_SCRIPT'))()`",
         "updates_hint": "\n\n🔄 Updates are available in the *Updates* section",
         "error_activate": "⚠️ Activation error.\n{s1} or {s2}",
         "error_sub": "⚠️ Error checking subscription.",
@@ -139,8 +174,6 @@ def github_write(filename, data, sha=None, message="update"):
     r = requests.put(url, headers=headers, json=payload, timeout=10)
     return r.status_code in (200, 201)
 
-PENDING_FILE = "pending.json"
-
 def pending_get(chat_id):
     try:
         data, _ = github_read(PENDING_FILE)
@@ -165,8 +198,6 @@ def pending_del(chat_id):
     except Exception as e:
         print(f"pending_del error: {e}")
 
-LANG_FILE = "languages.json"
-
 def lang_get(chat_id):
     try:
         data, _ = github_read(LANG_FILE)
@@ -182,62 +213,69 @@ def lang_set(chat_id, lang):
     except Exception as e:
         print(f"lang_set error: {e}")
 
-SUBS_FILE = "subscriptions.json"
-
 def is_active(sub_data):
     if sub_data["expires"] is None:
         return True
     expires = datetime.fromisoformat(sub_data["expires"])
     return datetime.utcnow() < expires
 
-def update_users_txt(subs):
-    active = [u for u, d in subs.items() if is_active(d)]
+def update_users_txt(subs, filename="users.txt"):
+    active = [u.lower() for u, d in subs.items() if is_active(d)]
     headers = {
         "Authorization": f"token {GITHUB_TOKEN}",
         "Accept": "application/vnd.github.v3+json"
     }
-    url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/users.txt"
+    url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{filename}"
     r = requests.get(url, headers=headers, timeout=10)
     sha = r.json().get("sha") if r.status_code == 200 else None
     content = "\n".join(active) + "\n"
     encoded = base64.b64encode(content.encode()).decode()
-    payload = {"message": "Sync users.txt", "content": encoded}
+    payload = {"message": f"Sync {filename}", "content": encoded}
     if sha:
         payload["sha"] = sha
     requests.put(url, headers=headers, json=payload, timeout=10)
 
-def add_subscription(username, plan_key, tg_id):
-    plan = PLANS[plan_key]
-    subs, sha = github_read(SUBS_FILE)
+def add_subscription(username, plan_key, tg_id, product):
+    plans = PLANS[product]
+    plan = plans[plan_key]
+    subs_file = PREMIUM_SUBS_FILE if product == "premium" else SUBS_FILE
+    users_file = "premium_users.txt" if product == "premium" else "users.txt"
+
+    subs, sha = github_read(subs_file)
     now = datetime.utcnow()
     expires = None if plan["days"] == -1 else (now + timedelta(days=plan["days"])).isoformat()
-    subs[username] = {
+    subs[username.lower()] = {
         "plan": plan_key,
         "plan_name_ru": plan["name_ru"],
         "plan_name_en": plan["name_en"],
         "expires": expires,
         "bought_at": now.isoformat(),
-        "tg_id": tg_id
+        "tg_id": tg_id,
+        "product": product
     }
-    ok = github_write(SUBS_FILE, subs, sha, f"Added {username}")
+    ok = github_write(subs_file, subs, sha, f"Added {username}")
     if ok:
-        update_users_txt(subs)
+        update_users_txt(subs, users_file)
     return ok
 
 def cleanup_expired():
     while True:
         try:
             print("Проверка истёкших подписок...")
-            subs, sha = github_read(SUBS_FILE)
-            changed = False
-            for username in list(subs.keys()):
-                if not is_active(subs[username]):
-                    print(f"Удаляем: {username}")
-                    del subs[username]
-                    changed = True
-            if changed:
-                github_write(SUBS_FILE, subs, sha, "Cleanup expired")
-                update_users_txt(subs)
+            for subs_file, users_file in [
+                (SUBS_FILE, "users.txt"),
+                (PREMIUM_SUBS_FILE, "premium_users.txt")
+            ]:
+                subs, sha = github_read(subs_file)
+                changed = False
+                for username in list(subs.keys()):
+                    if not is_active(subs[username]):
+                        print(f"Удаляем: {username}")
+                        del subs[username]
+                        changed = True
+                if changed:
+                    github_write(subs_file, subs, sha, "Cleanup expired")
+                    update_users_txt(subs, users_file)
         except Exception as e:
             print(f"cleanup error: {e}")
         time.sleep(3600)
@@ -262,14 +300,14 @@ def product_keyboard(lang):
     kb.add(types.InlineKeyboardButton(t(lang, "premium_btn"), callback_data="product_premium"))
     return kb
 
-def plans_keyboard(lang):
+def plans_keyboard(lang, product):
     kb = types.InlineKeyboardMarkup()
-    for key, plan in PLANS.items():
+    for key, plan in PLANS[product].items():
         rub = usd_to_rub(plan["usd"])
         name = plan[T[lang]["plan_name"]]
         kb.add(types.InlineKeyboardButton(
             f"{name} — ${plan['usd']} (~{rub}₽)",
-            callback_data=f"buy_{key}"
+            callback_data=f"buy_{product}_{key}"
         ))
     return kb
 
@@ -304,15 +342,24 @@ def handle_product(call):
     bot.answer_callback_query(call.id)
 
     if product == "premium":
+        rate = get_usd_rub()
         bot.send_message(call.message.chat.id,
-            t(lang, "premium_wip"),
+            t(lang, "premium_wip",
+              p5=round(4*rate),
+              p30=round(15*rate),
+              p365=round(50*rate),
+              pinf=round(200*rate)),
             parse_mode="Markdown")
+        bot.send_message(call.message.chat.id,
+            t(lang, "choose_plan"),
+            parse_mode="Markdown",
+            reply_markup=plans_keyboard(lang, "premium"))
         return
 
     bot.send_message(call.message.chat.id,
         t(lang, "choose_plan"),
         parse_mode="Markdown",
-        reply_markup=plans_keyboard(lang))
+        reply_markup=plans_keyboard(lang, "base"))
 
 @bot.message_handler(func=lambda m: m.text in [t("ru", "help_btn"), t("en", "help_btn")])
 def help_menu(message):
@@ -326,12 +373,13 @@ def updates_menu(message):
     lang = lang_get(message.chat.id)
     has_access = False
     try:
-        subs, _ = github_read(SUBS_FILE)
-        for uname, data in subs.items():
-            if data.get("tg_id") == message.chat.id and data["plan"] in ("365d", "inf"):
-                if is_active(data):
-                    has_access = True
-                    break
+        for subs_file in [SUBS_FILE, PREMIUM_SUBS_FILE]:
+            subs, _ = github_read(subs_file)
+            for uname, data in subs.items():
+                if data.get("tg_id") == message.chat.id and data["plan"] in ("365d", "inf"):
+                    if is_active(data):
+                        has_access = True
+                        break
     except:
         pass
 
@@ -352,23 +400,24 @@ def updates_menu(message):
 def my_sub(message):
     lang = lang_get(message.chat.id)
     try:
-        subs, _ = github_read(SUBS_FILE)
-        for uname, data in subs.items():
-            if data.get("tg_id") == message.chat.id:
-                if is_active(data):
-                    plan_name = data.get(f"plan_name_{lang}", data.get("plan_name_ru", ""))
-                    if data["expires"]:
-                        expires = datetime.fromisoformat(data["expires"])
-                        days_left = (expires - datetime.utcnow()).days
-                        exp_str = t(lang, "sub_until", d=expires.strftime('%d.%m.%Y'), n=days_left)
+        for subs_file in [SUBS_FILE, PREMIUM_SUBS_FILE]:
+            subs, _ = github_read(subs_file)
+            for uname, data in subs.items():
+                if data.get("tg_id") == message.chat.id:
+                    if is_active(data):
+                        plan_name = data.get(f"plan_name_{lang}", data.get("plan_name_ru", ""))
+                        if data["expires"]:
+                            expires = datetime.fromisoformat(data["expires"])
+                            days_left = (expires - datetime.utcnow()).days
+                            exp_str = t(lang, "sub_until", d=expires.strftime('%d.%m.%Y'), n=days_left)
+                        else:
+                            exp_str = t(lang, "sub_forever")
+                        bot.send_message(message.chat.id,
+                            t(lang, "sub_active", u=uname, p=plan_name, e=exp_str),
+                            parse_mode="Markdown")
                     else:
-                        exp_str = t(lang, "sub_forever")
-                    bot.send_message(message.chat.id,
-                        t(lang, "sub_active", u=uname, p=plan_name, e=exp_str),
-                        parse_mode="Markdown")
-                else:
-                    bot.send_message(message.chat.id, t(lang, "sub_expired"))
-                return
+                        bot.send_message(message.chat.id, t(lang, "sub_expired"))
+                    return
         bot.send_message(message.chat.id, t(lang, "no_sub"))
     except Exception as e:
         print(f"mysub error: {e}")
@@ -377,14 +426,17 @@ def my_sub(message):
 @bot.callback_query_handler(func=lambda c: c.data.startswith("buy_"))
 def handle_plan_choice(call):
     lang = lang_get(call.message.chat.id)
-    plan_key = call.data.replace("buy_", "")
-    plan = PLANS[plan_key]
+    parts = call.data.split("_")
+    product = parts[1]
+    plan_key = parts[2]
+    plan = PLANS[product][plan_key]
     rub = usd_to_rub(plan["usd"])
     code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
 
     pending_set(call.message.chat.id, {
         "code": code,
         "plan": plan_key,
+        "product": product,
         "rub": rub,
         "step": "pay"
     })
@@ -392,7 +444,7 @@ def handle_plan_choice(call):
     params = {
         "receiver": WALLET,
         "quickpay-form": "shop",
-        "targets": f"GGshop {plan['name_ru']}",
+        "targets": f"GGshop {product} {plan['name_ru']}",
         "paymentType": "AC",
         "sum": rub,
         "label": code,
@@ -446,9 +498,10 @@ def get_username(message):
     if not data:
         return
     plan_key = data["plan"]
-    plan = PLANS[plan_key]
+    product = data.get("product", "base")
+    plan = PLANS[product][plan_key]
 
-    success = add_subscription(username, plan_key, message.chat.id)
+    success = add_subscription(username, plan_key, message.chat.id, product)
     pending_del(message.chat.id)
 
     if success:
@@ -456,11 +509,11 @@ def get_username(message):
             exp_str = t(lang, "sub_forever")
         else:
             exp_date = (datetime.utcnow() + timedelta(days=plan["days"])).strftime('%d.%m.%Y')
-            days = plan["days"]
-            exp_str = t(lang, "sub_until", d=exp_date, n=days)
+            exp_str = t(lang, "sub_until", d=exp_date, n=plan["days"])
 
         plan_name = plan[T[lang]["plan_name"]]
-        text = t(lang, "activated", u=username, p=plan_name, e=exp_str)
+        activated_key = "activated_premium" if product == "premium" else "activated_base"
+        text = t(lang, activated_key, u=username, p=plan_name, e=exp_str)
         if plan_key in ("365d", "inf"):
             text += t(lang, "updates_hint")
         bot.send_message(message.chat.id, text, parse_mode="Markdown", reply_markup=main_menu(lang))
@@ -500,12 +553,18 @@ class Handler(BaseHTTPRequestHandler):
                 "Authorization": f"token {GITHUB_TOKEN}",
                 "Accept": "application/vnd.github.v3+json"
             }
-            url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/users.txt"
-            r = requests.get(url, headers=headers, timeout=10)
-            data = r.json()
-            content = base64.b64decode(data["content"]).decode("utf-8")
-            users = [u.strip() for u in content.splitlines() if u.strip()]
-            response = b'valid' if user in users else b'invalid'
+            # Проверяем оба списка
+            found = False
+            for filename in ["users.txt", "premium_users.txt"]:
+                url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{filename}"
+                r = requests.get(url, headers=headers, timeout=10)
+                if r.status_code == 200:
+                    content = base64.b64decode(r.json()["content"]).decode("utf-8")
+                    users = [u.strip().lower() for u in content.splitlines() if u.strip()]
+                    if user.lower() in users:
+                        found = True
+                        break
+            response = b'valid' if found else b'invalid'
         except Exception as e:
             print(f"Handler error: {e}")
             response = b'error'
