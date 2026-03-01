@@ -65,6 +65,7 @@ T = {
             "• Навсегда — $200 (~{pinf}₽)\n\n"
             "👤 {s1}\n👤 {s2}"
         ),
+        "confirm_premium": "✅ Я понял, выбрать тариф",
         "choose_plan": "💳 *Выбери тариф:*",
         "help_text": "❓ *Помощь*\n\nЕсли возникли проблемы — пиши в поддержку:\n\n👤 {s1}\n👤 {s2}\n\nПроверить подписку: /mysub",
         "updates_locked": "🔒 *Раздел обновлений*\n\nДоступен только для тарифов *365 дней* и *Навсегда*.\n\nКупи подходящий тариф через 🛒 Купить подписку",
@@ -107,6 +108,7 @@ T = {
             "• Forever — $200 (~{pinf}₽)\n\n"
             "👤 {s1}\n👤 {s2}"
         ),
+        "confirm_premium": "✅ Got it, choose plan",
         "choose_plan": "💳 *Choose a plan:*",
         "help_text": "❓ *Help*\n\nIf you have any issues — contact support:\n\n👤 {s1}\n👤 {s2}\n\nCheck your subscription: /mysub",
         "updates_locked": "🔒 *Updates section*\n\nOnly available for *365 days* and *Forever* plans.\n\nBuy the right plan via 🛒 Buy subscription",
@@ -343,23 +345,38 @@ def handle_product(call):
 
     if product == "premium":
         rate = get_usd_rub()
+        kb = types.InlineKeyboardMarkup()
+        kb.add(types.InlineKeyboardButton(
+            t(lang, "confirm_premium"),
+            callback_data="confirm_premium"
+        ))
         bot.send_message(call.message.chat.id,
             t(lang, "premium_wip",
               p5=round(4*rate),
               p30=round(15*rate),
               p365=round(50*rate),
               pinf=round(200*rate)),
-            parse_mode="Markdown")
-        bot.send_message(call.message.chat.id,
-            t(lang, "choose_plan"),
             parse_mode="Markdown",
-            reply_markup=plans_keyboard(lang, "premium"))
+            reply_markup=kb)
         return
 
     bot.send_message(call.message.chat.id,
         t(lang, "choose_plan"),
         parse_mode="Markdown",
         reply_markup=plans_keyboard(lang, "base"))
+
+@bot.callback_query_handler(func=lambda c: c.data == "confirm_premium")
+def handle_confirm_premium(call):
+    lang = lang_get(call.message.chat.id)
+    bot.answer_callback_query(call.id)
+    try:
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+    except:
+        pass
+    bot.send_message(call.message.chat.id,
+        t(lang, "choose_plan"),
+        parse_mode="Markdown",
+        reply_markup=plans_keyboard(lang, "premium"))
 
 @bot.message_handler(func=lambda m: m.text in [t("ru", "help_btn"), t("en", "help_btn")])
 def help_menu(message):
@@ -553,7 +570,6 @@ class Handler(BaseHTTPRequestHandler):
                 "Authorization": f"token {GITHUB_TOKEN}",
                 "Accept": "application/vnd.github.v3+json"
             }
-            # Проверяем оба списка
             found = False
             for filename in ["users.txt", "premium_users.txt"]:
                 url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{filename}"
