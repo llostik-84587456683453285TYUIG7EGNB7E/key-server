@@ -71,7 +71,7 @@ T = {
         "updates_btn": "🔄 Updates",
         "choose_product": "🛍️ *What do you want to buy?*\n\nChoose a product:",
         "base_btn": "🔵 Base — autofarm script",
-        "premium_btn": "🟣 Premium — coming soon",
+        "premium_btn": "🟣 Ultimate — GGshop",
         "premium_wip": "🟣 *Premium*\n\n📝 Description:\n\n_(description coming soon)_\n\nStay tuned!\n\n👤 {s1}\n👤 {s2}",
         "choose_plan": "💳 *Choose a plan:*\n\n5 days — try it out\n30 days — standard\n365 days — great deal + all updates\nForever — maximum + all updates",
         "help_text": "❓ *Help*\n\nIf you have any issues — contact support:\n\n👤 {s1}\n👤 {s2}\n\nCheck your subscription: /mysub",
