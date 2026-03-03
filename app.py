@@ -240,27 +240,32 @@ def update_users_txt(subs, filename="users.txt"):
     requests.put(url, headers=headers, json=payload, timeout=10)
 
 def add_subscription(username, plan_key, tg_id, product):
-    plans = PLANS[product]
-    plan = plans[plan_key]
-    subs_file = PREMIUM_SUBS_FILE if product == "premium" else SUBS_FILE
-    users_file = "premium_users.txt" if product == "premium" else "users.txt"
+    try:
+        plans = PLANS[product]
+        plan = plans[plan_key]
+        subs_file = PREMIUM_SUBS_FILE if product == "premium" else SUBS_FILE
+        users_file = "premium_users.txt" if product == "premium" else "users.txt"
 
-    subs, sha = github_read(subs_file)
-    now = datetime.utcnow()
-    expires = None if plan["days"] == -1 else (now + timedelta(days=plan["days"])).isoformat()
-    subs[username.lower()] = {
-        "plan": plan_key,
-        "plan_name_ru": plan["name_ru"],
-        "plan_name_en": plan["name_en"],
-        "expires": expires,
-        "bought_at": now.isoformat(),
-        "tg_id": tg_id,
-        "product": product
-    }
-    ok = github_write(subs_file, subs, sha, f"Added {username}")
-    if ok:
-        update_users_txt(subs, users_file)
-    return ok
+        subs, sha = github_read(subs_file)
+        now = datetime.utcnow()
+        expires = None if plan["days"] == -1 else (now + timedelta(days=plan["days"])).isoformat()
+        subs[username.lower()] = {
+            "plan": plan_key,
+            "plan_name_ru": plan["name_ru"],
+            "plan_name_en": plan["name_en"],
+            "expires": expires,
+            "bought_at": now.isoformat(),
+            "tg_id": tg_id,
+            "product": product
+        }
+        ok = github_write(subs_file, subs, sha, f"Added {username}")
+        print(f"github_write result: {ok}, file: {subs_file}")
+        if ok:
+            update_users_txt(subs, users_file)
+        return ok
+    except Exception as e:
+        print(f"add_subscription ERROR: {e}")
+        return False
 
 def cleanup_expired():
     while True:
