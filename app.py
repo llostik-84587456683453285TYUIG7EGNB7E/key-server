@@ -22,7 +22,7 @@ SUPPORT_1 = "@llostikKJ00"
 SUPPORT_2 = "@cha7ok"
 
 UPDATE_LINKS = [
-    "https://github.com/llostiktt/GGshop-llostik-Cha7ok — версия 1.0",
+    "https://github.com/llostik-84587456683453285TYUIG7EGNB7E/by.llostikxCha7ok - hm",
 ]
 
 PLANS = {
