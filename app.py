@@ -50,12 +50,12 @@ T = {
         "help_btn": "❓ Помощь",
         "updates_btn": "🔄 Обновления",
         "choose_product": "🛍️ *Что хочешь купить?*\n\nВыбери продукт:",
-        "base_btn": "🔵 Base — автофарм скрипт",
-        "premium_btn": "🟣 Ultimate — GGshop",
+        "base_btn": "🔵 Base — база для спокойно легитной игры",
+        "premium_btn": "🟣 Ultimate — можно играть вообще без легита",
         "base_wip": (
             "🔵 *Base — база для спокойно легитной игры*\n\n"
             "📝 Описание:\n\n"
-            "_(здесь будет описание)_\n\n"
+            "_(обычный скрипт если хочешь играть легитно но с легкостью)_\n\n"
             "💳 *Тарифы:*\n\n"
             "• 5 дней — $2 (~{p5}₽)\n"
             "• 30 дней — $10 (~{p30}₽)\n"
@@ -105,12 +105,12 @@ T = {
         "help_btn": "❓ Help",
         "updates_btn": "🔄 Updates",
         "choose_product": "🛍️ *What do you want to buy?*\n\nChoose a product:",
-        "base_btn": "🔵 Base — autofarm script",
-        "premium_btn": "🟣 Ultimate — GGshop",
+        "base_btn": "🔵 Base — a base for a quietly legal game",
+        "premium_btn": "🟣 Ultimate — you can play without any limit at all",
         "base_wip": (
             "🔵 *Base — a base for a quietly legal game*\n\n"
             "📝 Description:\n\n"
-            "_(description coming soon)_\n\n"
+            "_(a regular script if you want to play legitimately but easily)_\n\n"
             "💳 *Plans:*\n\n"
             "• 5 days — $2 (~{p5}₽)\n"
             "• 30 days — $10 (~{p30}₽)\n"
