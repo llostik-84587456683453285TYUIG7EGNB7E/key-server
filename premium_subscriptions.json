@@ -7,5 +7,14 @@
     "bought_at": "2026-03-03T20:11:57.944291",
     "tg_id": 5159404892,
     "product": "premium"
+  },
+  "sobadkekw": {
+    "plan": "5d",
+    "plan_name_ru": "5 дней",
+    "plan_name_en": "5 days",
+    "expires": "2026-03-08T20:14:51.494345",
+    "bought_at": "2026-03-03T20:14:51.494345",
+    "tg_id": 5159404892,
+    "product": "premium"
   }
 }
