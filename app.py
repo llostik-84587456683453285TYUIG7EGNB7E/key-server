@@ -215,6 +215,7 @@ def github_write(filename, data, sha=None, message="update"):
     if sha:
         payload["sha"] = sha
     r = requests.put(url, headers=headers, json=payload, timeout=10)
+    print(f"github_write {filename}: status={r.status_code}, response={r.json()}")
     return r.status_code in (200, 201)
 
 def is_active(sub_data):
