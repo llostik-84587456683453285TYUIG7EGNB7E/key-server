@@ -53,7 +53,7 @@ T = {
         "base_btn": "🔵 Base — автофарм скрипт",
         "premium_btn": "🟣 Ultimate — GGshop",
         "base_wip": (
-            "🔵 *Base — автофарм скрипт*\n\n"
+            "🔵 *Base — база для спокойно легитной игры*\n\n"
             "📝 Описание:\n\n"
             "_(здесь будет описание)_\n\n"
             "💳 *Тарифы:*\n\n"
@@ -66,7 +66,7 @@ T = {
         "premium_wip": (
             "🟣 *Ultimate — GGshop*\n\n"
             "📝 Описание:\n\n"
-            "_(здесь будет описание)_\n\n"
+            "_(есть все функции за каторые не банят в том числе и speedhack и анти отдача и разброс и еще не мал функций)_\n\n"
             "💳 *Тарифы:*\n\n"
             "• 5 дней — $4 (~{p5}₽)\n"
             "• 30 дней — $14 (~{p30}₽)\n"
@@ -108,7 +108,7 @@ T = {
         "base_btn": "🔵 Base — autofarm script",
         "premium_btn": "🟣 Ultimate — GGshop",
         "base_wip": (
-            "🔵 *Base — autofarm script*\n\n"
+            "🔵 *Base — a base for a quietly legal game*\n\n"
             "📝 Description:\n\n"
             "_(description coming soon)_\n\n"
             "💳 *Plans:*\n\n"
@@ -121,7 +121,7 @@ T = {
         "premium_wip": (
             "🟣 *Ultimate — GGshop*\n\n"
             "📝 Description:\n\n"
-            "_(description coming soon)_\n\n"
+            "_(there are all the functions that don't get banned, including speedhack, NoRecoil, spread, and more. Unfortunately, we know that the script is written in Russian, so there will be prompts.1.speedhack if the value is higher than 21 = ban if it starts to teleport too much, lower it to 19this and everything else is intuitive.)_\n\n"
             "💳 *Plans:*\n\n"
             "• 5 days — $4 (~{p5}₽)\n"
             "• 30 days — $14 (~{p30}₽)\n"
