@@ -30,20 +30,18 @@ PLANS = {
         "5d":   {"days": 5,   "usd": 2,   "name_ru": "5 дней",   "name_en": "5 days"},
         "30d":  {"days": 30,  "usd": 10,  "name_ru": "30 дней",  "name_en": "30 days"},
         "365d": {"days": 365, "usd": 40,  "name_ru": "365 дней", "name_en": "365 days"},
-        "inf":  {"days": -1,  "usd": 150, "name_ru": "Навсегда", "name_en": "Forever"},
+        "inf":  {"days": -1,  "usd": 60,  "name_ru": "Навсегда", "name_en": "Forever"},
     },
     "premium": {
         "5d":   {"days": 5,   "usd": 4,   "name_ru": "5 дней",   "name_en": "5 days"},
-        "30d":  {"days": 30,  "usd": 15,  "name_ru": "30 дней",  "name_en": "30 days"},
-        "365d": {"days": 365, "usd": 50,  "name_ru": "365 дней", "name_en": "365 days"},
-        "inf":  {"days": -1,  "usd": 200, "name_ru": "Навсегда", "name_en": "Forever"},
+        "30d":  {"days": 30,  "usd": 14,  "name_ru": "30 дней",  "name_en": "30 days"},
+        "365d": {"days": 365, "usd": 44,  "name_ru": "365 дней", "name_en": "365 days"},
+        "inf":  {"days": -1,  "usd": 130, "name_ru": "Навсегда", "name_en": "Forever"},
     }
 }
 
 SUBS_FILE = "subscriptions.json"
 PREMIUM_SUBS_FILE = "premium_subscriptions.json"
-PENDING_FILE = "pending.json"
-LANG_FILE = "languages.json"
 
 T = {
     "ru": {
@@ -54,18 +52,30 @@ T = {
         "choose_product": "🛍️ *Что хочешь купить?*\n\nВыбери продукт:",
         "base_btn": "🔵 Base — автофарм скрипт",
         "premium_btn": "🟣 Ultimate — GGshop",
+        "base_wip": (
+            "🔵 *Base — автофарм скрипт*\n\n"
+            "📝 Описание:\n\n"
+            "_(здесь будет описание)_\n\n"
+            "💳 *Тарифы:*\n\n"
+            "• 5 дней — $2 (~{p5}₽)\n"
+            "• 30 дней — $10 (~{p30}₽)\n"
+            "• 365 дней — $40 (~{p365}₽)\n"
+            "• Навсегда — $60 (~{pinf}₽)\n\n"
+            "👤 {s1}\n👤 {s2}"
+        ),
         "premium_wip": (
             "🟣 *Ultimate — GGshop*\n\n"
             "📝 Описание:\n\n"
             "_(здесь будет описание)_\n\n"
             "💳 *Тарифы:*\n\n"
             "• 5 дней — $4 (~{p5}₽)\n"
-            "• 30 дней — $15 (~{p30}₽)\n"
-            "• 365 дней — $50 (~{p365}₽)\n"
-            "• Навсегда — $200 (~{pinf}₽)\n\n"
+            "• 30 дней — $14 (~{p30}₽)\n"
+            "• 365 дней — $44 (~{p365}₽)\n"
+            "• Навсегда — $130 (~{pinf}₽)\n\n"
             "👤 {s1}\n👤 {s2}"
         ),
-        "confirm_premium": "✅ Я понял, выбрать тариф",
+        "confirm_base": "✅ Понял, выбрать тариф Base",
+        "confirm_premium": "✅ Понял, выбрать тариф Ultimate",
         "choose_plan": "💳 *Выбери тариф:*",
         "help_text": "❓ *Помощь*\n\nЕсли возникли проблемы — пиши в поддержку:\n\n👤 {s1}\n👤 {s2}\n\nПроверить подписку: /mysub",
         "updates_locked": "🔒 *Раздел обновлений*\n\nДоступен только для тарифов *365 дней* и *Навсегда*.\n\nКупи подходящий тариф через 🛒 Купить подписку",
@@ -81,8 +91,8 @@ T = {
         "paid_ok": "✅ *Оплата найдена!*\n\nНапиши свой ник в Roblox:",
         "paid_fail": "❌ Оплата не найдена.\n\nПодожди пару минут и попробуй /check снова.\n\nПроблемы? {s1} или {s2}",
         "no_plan": "❌ Сначала выбери тариф через 🛒 Купить подписку",
-        "activated_base": "🎉 *Подписка Base активирована! Пожалуйста подождите пока сервер вас обновит — от 1 до 5-6 минут 🥰*\n\n👤 Ник: `{u}`\n📦 Тариф: {p}\n⏳ Действует: {e}\n\nЗапускай скрипт в Xeno:\n`loadstring(game:HttpGet('https://raw.githubusercontent.com/llostik-84587456683453285TYUIG7EGNB7E/by.llostikxCha7ok/refs/heads/main/Final.best'))()`",
-        "activated_premium": "🎉 *Подписка Ultimate активирована! Пожалуйста подождите пока сервер вас обновит — от 1 до 5-6 минут 🥰*\n\n👤 Ник: `{u}`\n📦 Тариф: {p}\n⏳ Действует: {e}\n\nЗапускай скрипт в Xeno:\n`loadstring(game:HttpGet('https://raw.githubusercontent.com/llostik-84587456683453285TYUIG7EGNB7E/by.llostikxCha7ok/refs/heads/main/PREMIUM_SCRIPT'))()`",
+        "activated_base": "🎉 *Подписка Base активирована! Подождите пока сервер вас обновит — от 1 до 5-6 минут 🥰*\n\n👤 Ник: `{u}`\n📦 Тариф: {p}\n⏳ Действует: {e}\n\nЗапускай скрипт в Xeno:\n`loadstring(game:HttpGet('https://raw.githubusercontent.com/llostik-84587456683453285TYUIG7EGNB7E/by.llostikxCha7ok/refs/heads/main/Final.best'))()`",
+        "activated_premium": "🎉 *Подписка Ultimate активирована! Подождите пока сервер вас обновит — от 1 до 5-6 минут 🥰*\n\n👤 Ник: `{u}`\n📦 Тариф: {p}\n⏳ Действует: {e}\n\nЗапускай скрипт в Xeno:\n`loadstring(game:HttpGet('https://raw.githubusercontent.com/llostik-84587456683453285TYUIG7EGNB7E/by.llostikxCha7ok/refs/heads/main/PREMIUM_SCRIPT'))()`",
         "updates_hint": "\n\n🔄 Обновления доступны в разделе *Обновления*",
         "error_activate": "⚠️ Ошибка при активации.\n{s1} или {s2}",
         "error_sub": "⚠️ Ошибка при проверке подписки.",
@@ -97,18 +107,30 @@ T = {
         "choose_product": "🛍️ *What do you want to buy?*\n\nChoose a product:",
         "base_btn": "🔵 Base — autofarm script",
         "premium_btn": "🟣 Ultimate — GGshop",
+        "base_wip": (
+            "🔵 *Base — autofarm script*\n\n"
+            "📝 Description:\n\n"
+            "_(description coming soon)_\n\n"
+            "💳 *Plans:*\n\n"
+            "• 5 days — $2 (~{p5}₽)\n"
+            "• 30 days — $10 (~{p30}₽)\n"
+            "• 365 days — $40 (~{p365}₽)\n"
+            "• Forever — $60 (~{pinf}₽)\n\n"
+            "👤 {s1}\n👤 {s2}"
+        ),
         "premium_wip": (
             "🟣 *Ultimate — GGshop*\n\n"
             "📝 Description:\n\n"
             "_(description coming soon)_\n\n"
             "💳 *Plans:*\n\n"
             "• 5 days — $4 (~{p5}₽)\n"
-            "• 30 days — $15 (~{p30}₽)\n"
-            "• 365 days — $50 (~{p365}₽)\n"
-            "• Forever — $200 (~{pinf}₽)\n\n"
+            "• 30 days — $14 (~{p30}₽)\n"
+            "• 365 days — $44 (~{p365}₽)\n"
+            "• Forever — $130 (~{pinf}₽)\n\n"
             "👤 {s1}\n👤 {s2}"
         ),
-        "confirm_premium": "✅ Got it, choose plan",
+        "confirm_base": "✅ Got it, choose Base plan",
+        "confirm_premium": "✅ Got it, choose Ultimate plan",
         "choose_plan": "💳 *Choose a plan:*",
         "help_text": "❓ *Help*\n\nIf you have any issues — contact support:\n\n👤 {s1}\n👤 {s2}\n\nCheck your subscription: /mysub",
         "updates_locked": "🔒 *Updates section*\n\nOnly available for *365 days* and *Forever* plans.\n\nBuy the right plan via 🛒 Buy subscription",
@@ -139,6 +161,25 @@ def t(lang, key, **kwargs):
     return text.format(s1=SUPPORT_1, s2=SUPPORT_2, **kwargs)
 
 bot = telebot.TeleBot(BOT_TOKEN, threaded=False)
+
+# Память вместо GitHub для pending и lang
+pending_memory = {}
+lang_memory = {}
+
+def pending_get(chat_id):
+    return pending_memory.get(str(chat_id))
+
+def pending_set(chat_id, value):
+    pending_memory[str(chat_id)] = value
+
+def pending_del(chat_id):
+    pending_memory.pop(str(chat_id), None)
+
+def lang_get(chat_id):
+    return lang_memory.get(str(chat_id), "ru")
+
+def lang_set(chat_id, lang):
+    lang_memory[str(chat_id)] = lang
 
 def get_usd_rub():
     try:
@@ -175,45 +216,6 @@ def github_write(filename, data, sha=None, message="update"):
         payload["sha"] = sha
     r = requests.put(url, headers=headers, json=payload, timeout=10)
     return r.status_code in (200, 201)
-
-def pending_get(chat_id):
-    try:
-        data, _ = github_read(PENDING_FILE)
-        return data.get(str(chat_id))
-    except:
-        return None
-
-def pending_set(chat_id, value):
-    try:
-        data, sha = github_read(PENDING_FILE)
-        data[str(chat_id)] = value
-        github_write(PENDING_FILE, data, sha, "pending update")
-    except Exception as e:
-        print(f"pending_set error: {e}")
-
-def pending_del(chat_id):
-    try:
-        data, sha = github_read(PENDING_FILE)
-        if str(chat_id) in data:
-            del data[str(chat_id)]
-            github_write(PENDING_FILE, data, sha, "pending delete")
-    except Exception as e:
-        print(f"pending_del error: {e}")
-
-def lang_get(chat_id):
-    try:
-        data, _ = github_read(LANG_FILE)
-        return data.get(str(chat_id), "ru")
-    except:
-        return "ru"
-
-def lang_set(chat_id, lang):
-    try:
-        data, sha = github_read(LANG_FILE)
-        data[str(chat_id)] = lang
-        github_write(LANG_FILE, data, sha, "language update")
-    except Exception as e:
-        print(f"lang_set error: {e}")
 
 def is_active(sub_data):
     if sub_data["expires"] is None:
@@ -342,32 +344,35 @@ def handle_product(call):
     lang = lang_get(call.message.chat.id)
     product = call.data.replace("product_", "")
     bot.answer_callback_query(call.id)
+    rate = get_usd_rub()
 
-    if product == "premium":
-        rate = get_usd_rub()
+    if product == "base":
         kb = types.InlineKeyboardMarkup()
-        kb.add(types.InlineKeyboardButton(
-            t(lang, "confirm_premium"),
-            callback_data="confirm_premium"
-        ))
+        kb.add(types.InlineKeyboardButton(t(lang, "confirm_base"), callback_data="confirm_base"))
+        bot.send_message(call.message.chat.id,
+            t(lang, "base_wip",
+              p5=round(2*rate),
+              p30=round(10*rate),
+              p365=round(40*rate),
+              pinf=round(60*rate)),
+            parse_mode="Markdown",
+            reply_markup=kb)
+    else:
+        kb = types.InlineKeyboardMarkup()
+        kb.add(types.InlineKeyboardButton(t(lang, "confirm_premium"), callback_data="confirm_premium"))
         bot.send_message(call.message.chat.id,
             t(lang, "premium_wip",
               p5=round(4*rate),
-              p30=round(15*rate),
-              p365=round(50*rate),
-              pinf=round(200*rate)),
+              p30=round(14*rate),
+              p365=round(44*rate),
+              pinf=round(130*rate)),
             parse_mode="Markdown",
             reply_markup=kb)
-        return
 
-    bot.send_message(call.message.chat.id,
-        t(lang, "choose_plan"),
-        parse_mode="Markdown",
-        reply_markup=plans_keyboard(lang, "base"))
-
-@bot.callback_query_handler(func=lambda c: c.data == "confirm_premium")
-def handle_confirm_premium(call):
+@bot.callback_query_handler(func=lambda c: c.data in ("confirm_base", "confirm_premium"))
+def handle_confirm(call):
     lang = lang_get(call.message.chat.id)
+    product = "base" if call.data == "confirm_base" else "premium"
     bot.answer_callback_query(call.id)
     try:
         bot.delete_message(call.message.chat.id, call.message.message_id)
@@ -376,7 +381,7 @@ def handle_confirm_premium(call):
     bot.send_message(call.message.chat.id,
         t(lang, "choose_plan"),
         parse_mode="Markdown",
-        reply_markup=plans_keyboard(lang, "premium"))
+        reply_markup=plans_keyboard(lang, product))
 
 @bot.message_handler(func=lambda m: m.text in [t("ru", "help_btn"), t("en", "help_btn")])
 def help_menu(message):
