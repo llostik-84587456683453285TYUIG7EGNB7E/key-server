@@ -64,7 +64,7 @@ T = {
             "👤 {s1}\n👤 {s2}"
         ),
         "premium_wip": (
-            "🟣 *Ultimate — GGshop*\n\n"
+            "🟣 *Ultimate — можно играть вообще без легита*\n\n"
             "📝 Описание:\n\n"
             "_(есть все функции за каторые не банят в том числе и speedhack и анти отдача и разброс и еще не мал функций)_\n\n"
             "💳 *Тарифы:*\n\n"
@@ -119,7 +119,7 @@ T = {
             "👤 {s1}\n👤 {s2}"
         ),
         "premium_wip": (
-            "🟣 *Ultimate — GGshop*\n\n"
+            "🟣 *Ultimate — you can play without any limit at all*\n\n"
             "📝 Description:\n\n"
             "_(there are all the functions that don't get banned, including speedhack, NoRecoil, spread, and more. Unfortunately, we know that the script is written in Russian, so there will be prompts.1.speedhack if the value is higher than 21 = ban if it starts to teleport too much, lower it to 19this and everything else is intuitive.)_\n\n"
             "💳 *Plans:*\n\n"
