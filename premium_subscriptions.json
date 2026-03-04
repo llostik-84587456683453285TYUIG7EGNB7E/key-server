@@ -25,5 +25,23 @@
   "bought_at": "2026-03-04T20:11:51.494345"
     "tg_id": 5159404892,
     "product": "premium"
+  },
+  "kirilld222": {
+    "plan": "30d",
+    "plan_name_ru": "30 дней",
+    "plan_name_en": "30 days",
+  "expires": "2026-04-03T20:11:51.494345",
+  "bought_at": "2026-03-04T20:11:51.494345"
+    "tg_id": 5159404892,
+    "product": "premium"
+  },
+  "zombi606035": {
+    "plan": "30d",
+    "plan_name_ru": "30 дней",
+    "plan_name_en": "30 days",
+  "expires": "2026-04-03T20:11:51.494345",
+  "bought_at": "2026-03-04T20:11:51.494345"
+    "tg_id": 5159404892,
+    "product": "premium"
+   },
   }
-}
