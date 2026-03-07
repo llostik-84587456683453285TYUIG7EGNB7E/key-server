@@ -44,4 +44,12 @@
     "tg_id": 5159404892,
     "product": "premium"
    },
-  }
+  "danarussian": {
+    "plan": "90d",
+    "plan_name_ru": "90 дней",
+    "plan_name_en": "90 days",
+  "expires": "2026-06-02T20:11:51.494345",
+  "bought_at": "2026-03-04T20:11:51.494345"
+    "tg_id": 5159404892,
+    "product": "premium"
+    },
